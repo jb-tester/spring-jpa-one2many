@@ -12,9 +12,11 @@ import java.util.List;
  */
 public interface CustomerRepository extends CrudRepository<Customer,Long> {
 
+    // no completion for collection properties
     List<Customer> findByAddresses_ZipCode(String addresses_zipCode);
 
     List<Customer> findByAddresses_City(String addresses_city);
+    // errors reported for singular type parameter instead of collection
     boolean existsByAddresses(Address address);
     List<Customer> findByAddresses(Address address);
 }
