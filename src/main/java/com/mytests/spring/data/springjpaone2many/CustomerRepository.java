@@ -13,6 +13,8 @@ import java.util.List;
 public interface CustomerRepository extends CrudRepository<Customer,Long> {
 
     List<Customer> findByAddresses_ZipCode(String addresses_zipCode);
+
+    List<Customer> findByAddresses_City(String addresses_city);
     boolean existsByAddresses(Address address);
     List<Customer> findByAddresses(Address address);
 }

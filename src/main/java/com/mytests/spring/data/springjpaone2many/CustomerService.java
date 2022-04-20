@@ -24,6 +24,10 @@ public class CustomerService {
         for (Customer customer : customerRepository.findByAddresses_ZipCode("15000")) {
             System.out.println(customer);
         }
+        System.out.println("by city: ");
+        for (Customer customer : customerRepository.findByAddresses_City("Prague")) {
+            System.out.println(customer);
+        }
         System.out.println("exists by address: ");
         System.out.println(customerRepository.existsByAddresses(new Address(1, "Sankt-Petersburg", "Gavanskaya", "10/100", "197197", 101)));
         System.out.println("find by address: ");
